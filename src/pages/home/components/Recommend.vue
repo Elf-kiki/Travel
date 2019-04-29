@@ -3,7 +3,7 @@
     <div class="title">热销推荐</div>
     <ul>
       <li class="item border-bottom"
-          v-for="item of recommendList"
+          v-for="item of list"
           :key="item.id"
       >
         <img class="item-img" :src="item.imgUrl" alt="">
@@ -20,25 +20,8 @@
 <script>
 export default {
   name: 'HomeRecommend',
-  data () {
-    return {
-      recommendList: [{
-        id: '1',
-        imgUrl: 'https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1556352748&di=0146885de037ea081295590a788c9801&src=http://00.minipic.eastday.com/20170411/20170411212923_f3b93bece00e4178f3bc684240278d9a_5.jpeg',
-        title: '1大连生涯海洋世界',
-        desc: '浪漫大连首站，浪漫的海洋世界'
-      }, {
-        id: '2',
-        imgUrl: 'https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1556352748&di=0146885de037ea081295590a788c9801&src=http://00.minipic.eastday.com/20170411/20170411212923_f3b93bece00e4178f3bc684240278d9a_5.jpeg',
-        title: '大2连生涯海洋世界',
-        desc: '浪漫大连首站，浪漫的海洋世界'
-      }, {
-        id: '3',
-        imgUrl: 'https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1556352748&di=0146885de037ea081295590a788c9801&src=http://00.minipic.eastday.com/20170411/20170411212923_f3b93bece00e4178f3bc684240278d9a_5.jpeg',
-        title: '大连3生涯海洋世界',
-        desc: '浪漫大连首站，浪漫的海洋世界'
-      }]
-    }
+  props: {
+    list: Array
   }
 }
 </script>
@@ -46,7 +29,6 @@ export default {
 <style lang="stylus" scoped>
   @import "~styles/mixin.styl"
   .title
-    margin-top .1rem
     line-height .8rem
     background #eee
     text-indent .2rem

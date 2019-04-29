@@ -20,51 +20,18 @@ export default {
   data () {
     return {
       swiperOption: {
-        loop: true
-      },
-      iconList: [{
-        id: '01',
-        imgUrl: 'https://static.easyicon.net/preview/122/1223778.gif',
-        desc: '景点门票'
-      }, {
-        id: '02',
-        imgUrl: 'https://static.easyicon.net/preview/122/1223786.gif',
-        desc: '爱你哦'
-      }, {
-        id: '03',
-        imgUrl: 'https://static.easyicon.net/preview/122/1223780.gif',
-        desc: '吼吼吼'
-      }, {
-        id: '04',
-        imgUrl: 'https://static.easyicon.net/preview/122/1223781.gif',
-        desc: '啦啦啦'
-      }, {
-        id: '05',
-        imgUrl: 'https://static.easyicon.net/preview/122/1223778.gif',
-        desc: '景点门票'
-      }, {
-        id: '06',
-        imgUrl: 'https://static.easyicon.net/preview/122/1223786.gif',
-        desc: '爱你哦'
-      }, {
-        id: '07',
-        imgUrl: 'https://static.easyicon.net/preview/122/1223780.gif',
-        desc: '吼吼吼'
-      }, {
-        id: '08',
-        imgUrl: 'https://static.easyicon.net/preview/122/1223781.gif',
-        desc: '啦啦啦'
-      }, {
-        id: '09',
-        imgUrl: 'https://static.easyicon.net/preview/122/1223781.gif',
-        desc: '啦啦啦'
-      }]
+        loop: false,
+        autoplay: false
+      }
     }
+  },
+  props: {
+    list: Array
   },
   computed: {
     pages () {
       let pages = []
-      this.iconList.forEach((item, index) => {
+      this.list.forEach((item, index) => {
         let page = Math.floor(index / 8)
         if (!pages[page]) {
           pages[page] = []
@@ -85,6 +52,7 @@ export default {
     padding-bottom: 50%
   .icons
     margin-top .1rem
+    padding-bottom .1rem
     .icon
       position: relative
       overflow: hidden

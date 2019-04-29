@@ -3,7 +3,7 @@
     <div class="title">周末去哪儿</div>
     <ul>
       <li class="item border-bottom"
-          v-for="item of weekendList"
+          v-for="item of list"
           :key="item.id"
       >
         <div class="item-wrapper-img">
@@ -21,25 +21,8 @@
 <script>
 export default {
   name: 'HomeWeekend',
-  data () {
-    return {
-      weekendList: [{
-        id: '1',
-        imgUrl: 'https://images.pexels.com/photos/1137511/pexels-photo-1137511.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500 1x, https://images.pexels.com/photos/1137511/pexels-photo-1137511.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500 2x',
-        title: '1大连生涯海洋世界',
-        desc: '浪漫大连首站，浪漫的海洋世界'
-      }, {
-        id: '2',
-        imgUrl: 'https://images.pexels.com/photos/1137511/pexels-photo-1137511.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500 1x, https://images.pexels.com/photos/1137511/pexels-photo-1137511.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500 2x',
-        title: '大2连生涯海洋世界',
-        desc: '浪漫大连首站，浪漫的海洋世界'
-      }, {
-        id: '3',
-        imgUrl: 'https://images.pexels.com/photos/1137511/pexels-photo-1137511.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500 1x, https://images.pexels.com/photos/1137511/pexels-photo-1137511.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500 2x',
-        title: '大连3生涯海洋世界',
-        desc: '浪漫大连首站，浪漫的海洋世界'
-      }]
-    }
+  props: {
+    list: Array
   }
 }
 </script>
@@ -56,7 +39,7 @@ export default {
     .item-wrapper-img
       overflow hidden
       height 0
-      padding-bottom 56%
+      padding-bottom 38%
       .item-img
         width 100%
         border-radius .06rem
